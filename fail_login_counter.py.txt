@@ -1,0 +1,12 @@
+def count_failed_logins(file_path):
+    with open(file_path, "r") as file:
+        failed_logins = 0
+        for line in file:
+            if "Failed password" in line:
+                failed_logins += 1
+        print(f"Total failed login attempts: {failed_logins}")
+
+# Example usage
+if __name__ == "__main__":
+    log_file = "auth.log"  # Replace with your log file path
+    count_failed_logins(log_file)
